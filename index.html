@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小林薫之介 - ポートフォリオ</title>
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #ECE8DE;      /* 背景色(紙のような、くすんだベージュグレー) */
+      --card: #F5F2EA;       /* セクション内カードの背景(paperよりわずかに明るい) */
+      --ink: #23262B;         /* 本文・見出しの基本色(黒に近い墨色) */
+      --ink-soft: #5B6B73;    /* 補足テキスト・ラベル用(青みのグレー) */
+      --stamp: #B23A2E;       /* アクセント色(実績の"検証印"にのみ使用。多用禁止) */
+      --line: #C9C2B0;        /* 区切り線・破線用 */
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 400;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout Structure */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 80px 20px;
+      }
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 48px 0;
+      border-top: 1px dashed var(--line);
+    }
+
+    @media (min-width: 1024px) {
+      .section {
+        padding: 80px 0;
+      }
+    }
+
+    .section-first {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    /* Typography Defaults */
+    h1, h2, h3 {
+      font-family: 'Shippori Mincho B1', serif;
+      color: var(--ink);
+    }
+
+    /* Sign Element Stamp */
+    .stamp {
+      display: inline-block;
+      border: 2px solid var(--stamp);
+      color: var(--stamp);
+      padding: 2px 10px;
+      font-family: 'Shippori Mincho B1', serif;
+      font-weight: 800;
+      transform: rotate(-4deg);
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    /* Header Component */
+    .header-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    @media (min-width: 1024px) {
+      .header-title {
+        font-size: 36px;
+      }
+    }
+
+    .header-sub {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Capabilities (できること) */
+    .capability-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .capability-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .capability-heading {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .capability-evidence {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      color: var(--ink-soft);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .mini-timeline {
+      list-style: none;
+      margin: 8px 0 0 0;
+      padding: 0 0 0 20px;
+    }
+
+    .mini-timeline li {
+      position: relative;
+      padding: 4px 0 14px 16px;
+      border-left: 1px solid var(--line);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .mini-timeline li::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--stamp);
+    }
+
+    .mini-timeline li:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .timeline-note {
+      display: block;
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 2px;
+      line-height: 1.6;
+    }
+
+    /* Achievements Block (実績) */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--card);
+      border-left: 4px solid var(--stamp);
+      padding: 24px;
+    }
+
+    .card-title {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .card-text {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* pmhunt Section */
+    .pmhunt-text {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .pmhunt-link {
+      display: inline-block;
+      background-color: var(--ink);
+      color: var(--paper);
+      padding: 12px 24px;
+      border-radius: 0;
+      text-decoration: none;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .pmhunt-link:hover {
+      background-color: var(--stamp);
+    }
+
+    .pmhunt-link:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 4px;
+    }
+
+    /* Journey Toggle (ここまでの道のり) */
+    .story-toggle {
+      width: 100%;
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 16px 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .story-toggle:hover {
+      background-color: var(--card);
+      border-color: var(--ink-soft);
+    }
+
+    .story-toggle:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+
+    .story-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .story-body.open {
+      max-height: 2000px;
+    }
+
+    .story-content {
+      padding-top: 24px;
+    }
+
+    .story-paragraph {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .story-paragraph:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Closing Section */
+    .closing-section {
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px dashed var(--line);
+    }
+
+    .closing-text {
+      font-family: 'Shippori Mincho B1', serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--ink);
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- 4-1. Header -->
+    <header class="section section-first">
+      <h1 class="header-title">小林薫之介</h1>
+      <div class="header-sub">
+        <p>東京電機大学 工学部 電気電子工学科 / 28卒</p>
+        <p>PM・企画職志望</p>
+      </div>
+    </header>
+
+    <!-- 4-2. できること -->
+    <section class="section">
+      <h2 class="section-title">できること</h2>
+      <div class="capability-list">
+        <div class="capability-item">
+          <div class="capability-heading">1. 0→1で仮説を検証しきる実行力</div>
+          <ol class="mini-timeline">
+            <li>営業マン向けSNS開発</li>
+            <li>B2Bピボット</li>
+            <li>
+              3社へテスト導入
+              <span class="timeline-note">STEPHOUSE(全国300名規模の学生営業会社)・メンテモ(VC出資スタートアップ、代表に直談判)含む</span>
+            </li>
+            <li>撤退判断</li>
+          </ol>
+        </div>
+        <div class="capability-item">
+          <div class="capability-heading">2. 現場の反応を見てすぐ方針を変えるPDCA</div>
+          <div class="capability-evidence">
+            根拠:pmhuntの主要指標をインプレッションからフォロー→フォローバック経路に切り替えた。B2Bアプリでも現場の入力習慣という実態を見て撤退を決めた
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-heading">3. 泥臭い実行を厭わない現場力</div>
+          <div class="capability-evidence">
+            根拠:訪問販売で月8〜10日稼働・1日60件訪問を続け契約10件。ホテル系列全体の接客満足度アンケートで単月1位
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-3. 実績ブロック -->
+    <section class="section">
+      <h2 class="section-title">土台になっている実績</h2>
+      <div class="cards-container">
+        <!-- カード1 -->
+        <article class="card">
+          <h3 class="card-title">ホテルフロント(JAL/オークラ/ニッコー系列、2.5年)</h3>
+          <p class="card-text">
+            マニュアル通りにいかないクレーム対応が日常だった。その場で相手の期待値を読み替える感覚が身につき、系列グループ全体(複数ホテルの全社員・全スタッフが対象)の接客満足度アンケートで、<span class="stamp">単月1位</span>を獲得したことが何度かあった。会員獲得数で系列ホテルが全国1位になった月も複数あり、稼働日数の少ないアルバイトの立場でその3〜4割を担っていた。新卒社員や新人アルバイトの教育も任されるようになり、2.5年間、この水準で現場に立ち続けた。
+          </p>
+        </article>
+
+        <!-- カード2 -->
+        <article class="card">
+          <h3 class="card-title">訪問販売営業(歩合制、訪問10ヶ月+催事3ヶ月)</h3>
+          <p class="card-text">
+            店舗リーダーとして個人成果とチーム成果の両方を追った。月8〜10日稼働、1日平均60件の訪問で、概算で訪問250〜300件につき商談1件という歩留まりの中、1年強で<span class="stamp">契約10件</span>を獲得した。催事事業に配属後は、自分の営業に加えて店舗内の客動線設計や、チームメンバーの営業補佐にも取り組んだ。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4-4. pmhuntについて -->
+    <section class="section">
+      <h2 class="section-title">pmhuntについて</h2>
+      <p class="pmhunt-text">
+        26卒・28卒向け求人プラットフォーム「pmhunt」を、個人事業主として企画・運営している(2026年1月開業)。現在は情報収集・掲載データの拡充フェーズで、大々的な広告は行っていない。SNSでの発信を起点に流入があり、どの経路からサイトに到達したかをテストするため、リンクをすべて分けて流入数を計測している。実装はCodex/Claude Codeへの指示、リサーチはClaude・ChatGPT・Gemini・NotebookLM等、用途に応じて複数のAIツールを使い分けて一人で運営している。利用規約・プライバシーポリシー・特定商取引法に基づく表記の整備も行い、必要な場面では弁護士に相談しながら進めている。
+      </p>
+      <a href="https://pmhunt.divizero.jp" class="pmhunt-link" target="_blank" rel="noopener noreferrer">
+        pmhunt.divizero.jp を見る
+      </a>
+    </section>
+
+    <!-- 4-5. ここまでの道のり(折りたたみ) -->
+    <section class="section">
+      <button type="button" class="story-toggle" aria-expanded="false">
+        <span>ここまでの道のり ── 続きを読む</span>
+      </button>
+
+      <div class="story-body">
+        <div class="story-content">
+          <p class="story-paragraph">
+            訪問販売の営業をする中で、ノウハウが極端に属人化・ブラックボックス化していることに違和感があった。売れない営業マンが頼る本の多くは生存者バイアスか精神論で、正しいルートが閉ざされていると感じた。
+          </p>
+          <p class="story-paragraph">
+            VSCodeとGeminiでコーディングを始め、営業マン同士がノウハウを共有するSNSを開発。SNSや知人のつてでDMし、10数人の営業マンに実際に使ってもらった。だが2つの壁にぶつかった。ひとつは発信するメリットが薄いこと。ノウハウは営業マン自身の商売道具そのもので、無料で出す理由が薄い。もうひとつは供給が安定しないこと。一般的なSNSは無数の人間が適当にでも発信し続けるから成立するが、絞り出すノウハウを毎日量産するのは構造的に無理がある。ランク制や運営からの報酬で解決しようとも考えたが、学生の元手では黒字化の見込みが立たず、少人数のコミュニティにランクをつけること自体が非合理と判断し、撤退した。
+          </p>
+          <p class="story-paragraph">
+            個人向けが成立しないなら、会社の資産にすれば入力の合理性が生まれるはずだと考え、法人向けに転換。地道なDM営業で、株式会社STEPHOUSE(全国300名以上の学生が所属する営業会社)、株式会社GROWITH、そして複数のVCから出資を受けるスタートアップである株式会社メンテモの<span class="stamp">3社</span>にテスト導入までこぎつけた。メンテモは代表に直接アプローチし、事業責任者ではなくトップ本人と話して導入判断を得た。
+          </p>
+          <p class="story-paragraph">
+            契約には至らなかった。現場の入力習慣が根付かず、3社とも「月額費用をかけてまでは継続できない」という同じ理由で終了した。その後は家族や知人から頼まれたアプリを個人で作る活動を続けながら気づいた。3回とも、詰まっていたのは"作る"ことより"使い続けてもらう・届ける"ことの方だった。
+          </p>
+          <p class="story-paragraph">
+            自分自身が新卒PM/企画職の選考を受ける中で、「新卒からPMになれる会社かどうか」を判定できる情報がどこにもないことに気づいた。これまでの経験で身につけた「小さく試して、ダメならすぐ理由を言語化して次に動く」というやり方をそのまま持ち込み、pmhuntを立ち上げた。「作らないものリスト」を先に確定して機能追加の提案は原則差し戻す運用にし、主要指標もインプレッションからフォロー→フォローバック経路に切り替えるなど、検証と修正を重ねている。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-6. Closing -->
+    <section class="closing-section">
+      <p class="closing-text">
+        企画と実装は一人でできることを証明できました。訪問販売で自分自身、届けることの難しさも体で知っています。だからこそ、営業やマーケティングを主戦場にする人たちと組んで、企画側から一緒に数字を伸ばしていきたいです。
+      </p>
+    </section>
+
+  </main>
+
+  <!-- JavaScript (指示書通り実装) -->
+  <script>
+    const toggleBtn = document.querySelector('.story-toggle');
+    const storyBody = document.querySelector('.story-body');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = storyBody.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+      toggleBtn.textContent = isOpen
+        ? 'ここまでの道のり ── 閉じる'
+        : 'ここまでの道のり ── 続きを読む';
+    });
+  </script>
+</body>
+</html>
