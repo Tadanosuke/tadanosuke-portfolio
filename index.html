@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小林薫之介 - ポートフォリオ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小林薫之介のポートフォリオ</title>
 
-  <!-- Google Fonts CDN -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Google Fonts CDN -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -18,6 +18,29 @@
       --ink-soft: #5B6B73;    /* 補足テキスト・ラベル用(青みのグレー) */
       --stamp: #B23A2E;       /* アクセント色(実績の"検証印"にのみ使用。多用禁止) */
       --line: #C9C2B0;        /* 区切り線・破線用 */
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper: #1E1C19;
+        --card: #28251F;
+        --ink: #ECE6DA;
+        --ink-soft: #A69C8A;
+        --stamp: #E07A5F;
+        --line: #433E36;
+        color-scheme: dark;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #1E1C19;
+      --card: #28251F;
+      --ink: #ECE6DA;
+      --ink-soft: #A69C8A;
+      --stamp: #E07A5F;
+      --line: #433E36;
+      color-scheme: dark;
     }
 
     /* Reset & Base Styles */
@@ -278,7 +301,7 @@
     }
 
     .story-body.open {
-      max-height: 2000px;
+      max-height: none;
     }
 
     .story-content {
@@ -314,9 +337,9 @@
       margin: 0 auto;
     }
   </style>
+
 </head>
 <body>
-
   <main class="container">
 
     <!-- 4-1. Header -->
@@ -324,7 +347,7 @@
       <h1 class="header-title">小林薫之介</h1>
       <div class="header-sub">
         <p>東京電機大学 工学部 電気電子工学科 / 28卒</p>
-        <p>PM・企画職志望</p>
+        <p>PdM・企画・マーケティング・AI活用領域で挑戦中</p>
       </div>
     </header>
 
@@ -339,7 +362,7 @@
             <li>法人向けにピボット</li>
             <li>
               約30社へアプローチ、3社へテスト導入
-              <span class="timeline-note">成約率約10%。元インターン先STEPHOUSE(全国300名規模の学生営業会社)・メンテモ(VC出資スタートアップ、代表に直談判)含む</span>
+              <span class="timeline-note">テスト導入率約10%。元インターン先STEPHOUSE(全国300名規模の学生営業会社)・メンテモ(VC出資スタートアップ、代表に直談判)含む</span>
             </li>
             <li>契約に至らず撤退</li>
             <li>
@@ -353,15 +376,21 @@
           </ol>
         </div>
         <div class="capability-item">
-          <div class="capability-heading">2. 現場の反応を見てすぐ方針を変えるPDCA</div>
+          <div class="capability-heading">2. AIを使ったマーケティング実務（AIO運用）</div>
+          <div class="capability-evidence">
+            根拠:uniamにてAIO(AI検索最適化)を中心としたマーケティング施策を担当。ChatGPT/Gemini/Google AI Overview等での競合調査・ブランドVisibility分析、KPI設計、note記事の自動生成フロー構築、Peec AIを用いた週次・日次PDCAまで、仮説→施策→計測→改善のサイクルを一貫して回している
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-heading">3. 現場の反応を見てすぐ方針を変えるPDCA</div>
           <div class="capability-evidence">
             根拠:B2Bアプリでは現場の入力習慣という実態を見て撤退を決めた。Web制作事業では美容室の開封率の低さを見て、minimoで実地調査し撤退を判断。AIによる営業代行の検証では、3〜4ヶ月の運用で人間の最終調整がほぼ不要な水準まで出力精度を引き上げつつ、送信という行為だけは人間の手作業が必要という構造的なボトルネックを特定した
           </div>
         </div>
         <div class="capability-item">
-          <div class="capability-heading">3. 泥臭い実行を厭わない現場力</div>
+          <div class="capability-heading">4. 泥臭い実行を厭わない現場力</div>
           <div class="capability-evidence">
-            根拠:訪問販売で月8〜10日稼働・1日60件訪問を続け契約10件。ホテル系列全体の接客満足度アンケートで単月1位
+            根拠:訪問販売で月8〜10日稼働・1日60件訪問を続け契約10件。スターラボでの架電営業では、着信拒否されていた相手先からアポイントを獲得。ホテル系列全体の接客満足度アンケートで単月1位
           </div>
         </div>
       </div>
@@ -371,6 +400,14 @@
     <section class="section">
       <h2 class="section-title">土台になっている実績</h2>
       <div class="cards-container">
+        <!-- カード0 -->
+        <article class="card">
+          <h3 class="card-title">uniam:AIO(AI検索最適化)の実務立ち上げ</h3>
+          <p class="card-text">
+            ペットフードD2C・ヘルスケア事業を展開するuniamにて、2026年9月から業務委託でAIOを担当。ChatGPT/Gemini/Google AI Overview等における競合調査・ブランドVisibility分析、KPI設計、note記事の自動生成フロー構築、公式サイト・商品ページの改善提案までを一貫して担い、<span class="stamp">Peec AIで週次・日次PDCA</span>を回しながら有効施策を検証している。
+          </p>
+        </article>
+
         <!-- カード1 -->
         <article class="card">
           <h3 class="card-title">ホテルフロント(JAL/オークラ/ニッコー系列、2.5年)</h3>
@@ -389,9 +426,9 @@
 
         <!-- カード3 -->
         <article class="card">
-          <h3 class="card-title">Web制作事業:契約実務からの学び</h3>
+          <h3 class="card-title">AI営業代行:3〜4ヶ月でAI精度が実用水準に到達</h3>
           <p class="card-text">
-            整骨院のWebサイト制作を10万円(着手金1万円/納品時9万円)で受注したが、知り合いだからと口約束で進めてしまい、先方の経営状況の変化で<span class="stamp">着手金のみ</span>で終了した。この経験から、口約束よりも法的に有効な契約書を交わす方が誠実で確実だと学び、以降は弁護士に相談しながら契約書・利用規約を整備する運用に切り替えた。その整骨院とは今も良好な関係が続いている。美容室向けに展開した際は、開封率の低さの理由を数字だけで判断せず、minimoで無料カットを何軒もハシゴして実地調査し、「予約管理機能がなければサイトの優先順位は低く、SNSで十分」という構造を突き止めて撤退を判断した。
+            営業ノウハウをAIに学習させた自走型エージェントを設計し、法人向け営業支援に続いて、Webサイト制作の営業代行にも転用した。3〜4ヶ月の運用を通じて、当初は必要だった人間側の最終調整(不自然な言い回しの修正等)が、終盤には<span class="stamp">ほぼ不要</span>な水準まで到達。返信率をもとに次のテンプレートをAIに考えさせ、また送るというサイクルを繰り返した結果である。ただし、SNSの仕様上、最終的な送信だけは人間の手作業が必要という構造的なボトルネックも特定した。
           </p>
         </article>
       </div>
@@ -401,7 +438,7 @@
     <section class="section">
       <h2 class="section-title">個人事業「closer」としての取り組み</h2>
       <p class="pmhunt-text">
-        2026年1月から個人事業主「closer」として、営業の属人化・ブラックボックス化という一貫した課題意識のもと、個人向け・法人向けの営業支援ツール開発、AIを活用した営業代行の検証などに取り組んできた。直近では、これまでの知見をもとに新卒PM/企画職向けの就活支援ツールの開発にも着手している。実装はCodex/Claude Codeへの指示、リサーチはClaude・ChatGPT・Gemini・NotebookLM等、この1年以上で合計20万円ほどを投資しながら、用途に応じて複数のAIツールを使い分けて一人で運営している。
+        2026年1月から個人事業主「closer」として、営業の属人化・ブラックボックス化という一貫した課題意識のもと、個人向け・法人向けの営業支援ツール開発、AIを活用した営業代行の検証などに取り組んできた。実装はCodex/Claude Codeへの指示、リサーチはClaude・ChatGPT・Gemini・NotebookLM等、この1年以上で合計45万円ほどを投資しながら、用途に応じて複数のAIツールを使い分けて一人で運営している。
       </p>
     </section>
 
@@ -420,7 +457,7 @@
             VSCodeとGeminiでコーディングを始め、営業マン同士がノウハウを共有するSNSを開発。SNSや知人のつてでDMし、10数人の営業マンに実際に使ってもらった。だが2つの壁にぶつかった。ひとつは発信するメリットが薄いこと。ノウハウは営業マン自身の商売道具そのもので、無料で出す理由が薄い。もうひとつは供給が安定しないこと。一般的なSNSは無数の人間が適当にでも発信し続けるから成立するが、絞り出すノウハウを毎日量産するのは構造的に無理がある。ランク制や運営からの報酬で解決しようとも考えたが、学生の元手では黒字化の見込みが立たず、少人数のコミュニティにランクをつけること自体が非合理と判断し、撤退した。
           </p>
           <p class="story-paragraph">
-            個人向けが成立しないなら、会社の資産にすれば入力の合理性が生まれるはずだと考え、法人向けに転換。まず声をかけたのは、自分が訪問販売・催事のインターンとして働いていた株式会社STEPHOUSE(全国300名以上の学生が所属する営業会社)だった。現場にいたからこそ実感していた属人化の課題を、退社後に外部の立場から解決策として持ち込んだ。約30社にアプローチし、株式会社GROWITH、複数のVCから出資を受けるスタートアップである株式会社メンテモを含む<span class="stamp">3社</span>にテスト導入までこぎつけた(成約率約10%)。メンテモは代表に直接アプローチし、事業責任者ではなくトップ本人と話して導入判断を得た。契約には至らなかった。現場の入力習慣が根付かず、3社とも「月額費用をかけてまでは継続できない」という同じ理由で終了した。
+            個人向けが成立しないなら、会社の資産にすれば入力の合理性が生まれるはずだと考え、法人向けに転換。まず声をかけたのは、自分が訪問販売・催事のインターンとして働いていた株式会社STEPHOUSE(全国300名以上の学生が所属する営業会社)だった。現場にいたからこそ実感していた属人化の課題を、退社後に外部の立場から解決策として持ち込んだ。約30社にアプローチし、株式会社GROWITH、複数のVCから出資を受けるスタートアップである株式会社メンテモを含む<span class="stamp">3社</span>にテスト導入までこぎつけた(テスト導入率約10%)。メンテモは代表に直接アプローチし、事業責任者ではなくトップ本人と話して導入判断を得た。契約には至らなかった。現場の入力習慣が根付かず、3社とも「月額費用をかけてまでは継続できない」という同じ理由で終了した。
           </p>
           <p class="story-paragraph">
             次に着手したのはWebサイト制作事業だった。整骨院の案件を10万円(着手金1万円/納品時9万円)で受注したが、知り合いだからと口約束で進めてしまい、先方の経営状況の変化で着手金しか回収できなかった。事業を始めたばかりで契約実務の知識がなく、「ちゃんとしなくても大丈夫だろう」という甘えがあったのが原因だった。この経験から、口約束より法的に有効な契約書を交わす方が誠実で確実だと学び、以降は弁護士に相談しながら契約書・利用規約を整備する運用に切り替えた(その整骨院とは今も良好な関係が続いている)。美容室向けに展開した際は、開封率の低さの理由を数字だけで判断せず、minimoで無料カットを何軒もハシゴして実地調査。「予約管理機能がなければサイトの優先順位は低く、SNSで十分」という構造を突き止め、個人事業主ターゲットへの転換を検討し始めた矢先、AIによるWeb制作の普及で価格競争が激化し、差別化できず撤退した。
@@ -438,7 +475,7 @@
     <!-- 4-6. Closing -->
     <section class="closing-section">
       <p class="closing-text">
-        企画と実装は一人でできることを証明できました。訪問販売で自分自身、届けることの難しさも体で知っています。だからこそ、営業やマーケティングを主戦場にする人たちと組んで、企画側から一緒に数字を伸ばしていきたいです。
+        企画と実装は一人でできることを証明できました。訪問販売や架電営業で、自分自身、届けることの難しさも体で知っています。AIを使った仕組み化と、泥臭い実行力の両方を持って、マーケティングの現場で一緒に数字を伸ばしていきたいです。
       </p>
     </section>
 
@@ -457,5 +494,6 @@
         : 'ここまでの道のり ── 続きを読む';
     });
   </script>
+
 </body>
 </html>
